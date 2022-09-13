@@ -6,11 +6,25 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/13 02:28:50 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/13 22:54:13 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
+
+/**
+ * @brief Get the amount of miliseconds elapsed since the Epoch.
+ * time.tv_sec uses seconds and time.tv_usec uses microseconds,
+ * so these units need to be converted. 
+ * @return int64_t 
+ */
+int64_t	get_time(void)
+{
+	struct timeval	time;
+
+	gettimeofday(&time, NULL);
+	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
+}
 
 bool	ft_isdigit(int32_t c)
 {
