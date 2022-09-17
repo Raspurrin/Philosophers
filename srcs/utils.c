@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/13 22:54:13 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/17 23:47:35 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,18 @@ int64_t	get_time(void)
 
 	gettimeofday(&time, NULL);
 	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
+}
+
+void	ft_sleep(int64_t sleep_time)
+{
+	int64_t	old_time; 
+
+	old_time = get_time();
+	while (true)
+	{
+		if (get_time() - old_time == sleep_time)
+			return ;
+	}
 }
 
 bool	ft_isdigit(int32_t c)
