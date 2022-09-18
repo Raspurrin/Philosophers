@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/19 00:11:08 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/19 01:08:05 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,8 @@ bool	death_check(t_philo *philo, t_data *data)
 {
 	int64_t	cur_time;
 
-	pthread_mutex_lock(&philo->data->end_mutex);
 	if (philo->data->end_state == true)
-		return (true);
+		return (pthread_mutex_unlock(&data->end_mutex), true);
 	pthread_mutex_unlock(&data->end_mutex);
 	cur_time = get_time(philo->start_time);
 	if (cur_time - philo->meal_time == data->ripoclock)
