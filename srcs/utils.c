@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/17 23:47:35 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:43:20 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,15 @@
  * so these units need to be converted. 
  * @return int64_t 
  */
-int64_t	get_time(void)
+int64_t	get_time(int64_t start_time)
+{
+	struct timeval	time;
+
+	gettimeofday(&time, NULL);
+	return ((time.tv_sec * 1000) + (time.tv_usec / 1000) - start_time);
+}
+
+int64_t	start_time(void)
 {
 	struct timeval	time;
 
@@ -26,14 +34,14 @@ int64_t	get_time(void)
 	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
 }
 
-void	ft_sleep(int64_t sleep_time)
+void	ft_sleep(int64_t sleep_time, int64_t start_time)
 {
 	int64_t	old_time; 
 
-	old_time = get_time();
+	old_time = get_time(start_time);
 	while (true)
 	{
-		if (get_time() - old_time == sleep_time)
+		if (get_time(start_time) - old_time == sleep_time)
 			return ;
 	}
 }

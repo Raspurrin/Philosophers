@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/18 00:59:29 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:41:57 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ static void	eat(t_philo *philo, t_data *data)
 {
 	int64_t	cur_time;
 
-	cur_time = get_time();
-	philo->meal_time = get_time();
+	cur_time = get_time(philo->start_time);
+	philo->meal_time = get_time(philo->start_time);
 	lock(philo, data);
 	printf("%lld ms | philosopher %d is eating\n", cur_time, philo->index + 1);
 	usleep(philo->data->nomoclock);
@@ -58,14 +58,15 @@ static void	eat(t_philo *philo, t_data *data)
 
 void	*routine(void *v_philo)
 {
-	int64_t	cur_time;
-	t_philo	*const philo = v_philo;
+	int64_t			cur_time;
+	t_philo *const	philo = v_philo;
 
-	cur_time = get_time();
+	philo->start_time = start_time();
 	if (philo->index % 2 == 1)
 		usleep(10);
 	while (true)
-	{		
+	{
+		cur_time = get_time(philo->start_time);
 		// if (cur_time - philo->meal_time == philo->data->ripoclock)
 		// 	return (printf("%lld ms | philosopher %d died\n", cur_time, philo->index), NULL);
 		// if (meal_check(philo->data))

@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/17 23:06:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:42:22 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ typedef struct data
 
 typedef struct philo
 {
+	int64_t			start_time;
 	pthread_t		sopher;
-	
 	int32_t			index;
 	int64_t			meal_time;
 	int32_t			meal_count;
@@ -48,6 +48,8 @@ int32_t	ft_atoi(const char *str);
 bool	error_check(int32_t argc);
 void	init_data(t_data *data, int32_t argc, char **argv);
 void	*routine(void *v_philo);
-int64_t	get_time(void);
+int64_t	get_time(int64_t start_time);
+void	ft_sleep(int64_t sleep_time, int64_t start_time);
+int64_t	start_time(void);
 
 #endif
