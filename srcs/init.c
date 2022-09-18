@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/18 01:54:26 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/18 21:56:56 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_data(t_data *data, int32_t argc, char **argv)
 	int32_t	i;
 
 	i = 0;
+	data->end_state = false;
 	data->philo_nbr = ft_atoi(argv[1]);
 	data->ripoclock = ft_atoi(argv[2]);
 	data->nomoclock = ft_atoi(argv[3]);
@@ -38,7 +39,4 @@ void	init_data(t_data *data, int32_t argc, char **argv)
 										(void *)&data->philo[i]);
 		i++;
 	}
-	i = 0;
-	while (i < data->philo_nbr)
-		pthread_join(data->philo[i++].sopher, NULL);
 }

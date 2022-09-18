@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/18 18:57:02 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/18 21:56:34 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct data
 	int32_t			nomoclock;
 	int32_t			zzzoclock;
 	int32_t			min_meals;
+	bool			end_state;
+	pthread_mutex_t	end_mutex;
 }	t_data;
 
 typedef struct philo
