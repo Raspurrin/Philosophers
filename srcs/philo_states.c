@@ -6,24 +6,26 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/18 18:41:57 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/18 19:09:42 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-// static bool	meal_check(t_data *data)
-// {
-// 	int32_t	i;
+static bool	meal_check(t_data *data)
+{
+	int32_t	i;
 
-// 	i = 0;
-// 	while (i < data->min_meals)
-// 	{
-// 		if (data->philo[i].meal_count != data->min_meals)
-// 			return (false);
-// 	}
-// 	return (true);
-// }
+	i = 0;
+	while (i < data->min_meals)
+	{
+		pthread_mutex_lock(&data->philo[i].meal_mutex);
+		if (data->philo[i].meal_count != data->min_meals)
+			return (false);
+		pthread_mutex_unlock(&data->philo[i].meal_mutex);
+	}
+	return (true);
+}
 
 static void	unlock(t_philo *philo, t_data *data)
 {
@@ -53,7 +55,9 @@ static void	eat(t_philo *philo, t_data *data)
 	printf("%lld ms | philosopher %d is eating\n", cur_time, philo->index + 1);
 	usleep(philo->data->nomoclock);
 	unlock(philo, data);
+	pthread_mutex_lock(&philo->meal_mutex);
 	philo->meal_count++;
+	pthread_mutex_unlock(&philo->meal_mutex);
 }
 
 void	*routine(void *v_philo)
@@ -69,8 +73,8 @@ void	*routine(void *v_philo)
 		cur_time = get_time(philo->start_time);
 		// if (cur_time - philo->meal_time == philo->data->ripoclock)
 		// 	return (printf("%lld ms | philosopher %d died\n", cur_time, philo->index), NULL);
-		// if (meal_check(philo->data))
-		// 	return (printf("Everyone has eaten!\n"), NULL);
+		if (meal_check(philo->data))
+			return (printf("Everyone has eaten!\n"), NULL);
 		eat(philo, philo->data);
 		printf("%lld ms | philosopher %d is sleeping\n", cur_time, philo->index + 1);
 		usleep(philo->data->nomoclock);

@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/18 18:42:22 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/18 18:57:02 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct data
 
 typedef struct philo
 {
+	pthread_mutex_t	meal_mutex;
 	int64_t			start_time;
 	pthread_t		sopher;
 	int32_t			index;
