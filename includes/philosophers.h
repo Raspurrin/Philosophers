@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/18 21:56:34 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/20 00:09:30 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,13 @@ typedef struct philo
 }	t_philo;
 
 int32_t	ft_atoi(const char *str);
-bool	error_check(int32_t argc);
+bool	error_check(int32_t argc, char **argv);
 void	init_data(t_data *data, int32_t argc, char **argv);
 void	*routine(void *v_philo);
 int64_t	get_time(int64_t start_time);
 void	ft_sleep(int64_t sleep_time, int64_t start_time);
 int64_t	start_time(void);
+bool	ft_isalpha(int32_t c);
+bool	ft_isdigit(int32_t c);
 
 #endif
