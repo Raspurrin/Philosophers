@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 00:43:58 by mialbert          #+#    #+#              #
-#    Updated: 2022/09/20 00:50:27 by mialbert         ###   ########.fr        #
+#    Updated: 2022/09/20 20:00:52 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ all: philo
 
 banner:
 	@echo "\n${PURPLE}======== Philosophers ========${NC}"
-	@say Think eat sleep dont die think eat sleep dont die think eat sleep die die die die die die die death to all philosophers
+	@say die die die die die die die
+#	@say Think eat sleep dont die think eat sleep dont die think eat sleep die die die die die die die
 
 $(NAME): banner $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(DEBUG)

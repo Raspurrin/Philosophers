@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/20 00:11:27 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/20 21:37:02 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,25 @@
 static void	unlock(t_philo *philo, t_data *data)
 {
 	pthread_mutex_unlock(&data->forks[philo->index]);
-	if (philo->index == data->philo_nbr)
+	if (philo->index + 1 == data->philo_nbr)
 		pthread_mutex_unlock(&data->forks[0]);
 	else
-		pthread_mutex_unlock(&data->forks[philo->index + 1]);
+	{
+		if (pthread_mutex_unlock(&data->forks[philo->index + 1]))
+			philo->can_eat = false;
+	}
 }
 
 static void	lock(t_philo *philo, t_data *data)
 {
 	pthread_mutex_lock(&data->forks[philo->index]);
-	if (philo->index == data->philo_nbr)
+	if (philo->index + 1 == data->philo_nbr)
 		pthread_mutex_lock(&data->forks[0]);
 	else
-		pthread_mutex_lock(&data->forks[philo->index + 1]);
+	{
+		if (pthread_mutex_lock(&data->forks[philo->index + 1]))
+			philo->can_eat = false;
+	}
 }
 
 bool	death_check(t_philo *philo, t_data *data)
@@ -39,7 +45,7 @@ bool	death_check(t_philo *philo, t_data *data)
 		return (pthread_mutex_unlock(&data->end_mutex), true);
 	pthread_mutex_unlock(&data->end_mutex);
 	cur_time = get_time(philo->start_time);
-	if (cur_time - philo->meal_time == data->ripoclock)
+	if (cur_time - philo->meal_time >= data->ripoclock)
 	{
 		pthread_mutex_lock(&data->end_mutex);
 		if (data->end_state == false)
@@ -58,17 +64,19 @@ static void	eat(t_philo *philo, t_data *data)
 
 	if (death_check(philo, philo->data))
 		return ;
-	cur_time = get_time(philo->start_time);
-	philo->meal_time = cur_time;
 	lock(philo, data);
 	pthread_mutex_lock(&data->end_mutex);
-	if (data->end_state == false)
+	cur_time = get_time(philo->start_time);
+	if (data->end_state == false && philo->can_eat == true)
+	{
+		philo->meal_time = cur_time;
 		printf("%lld\t ms | philosopher %d is eating\n", cur_time, \
 													philo->index + 1);
+		philo->meal_count++;
+	}
 	pthread_mutex_unlock(&data->end_mutex);
-	usleep(philo->data->nomoclock);
+	usleep(philo->data->nomoclock * 1000);
 	unlock(philo, data);
-	philo->meal_count++;
 }
 
 void	*routine(void *v_philo)
@@ -77,10 +85,13 @@ void	*routine(void *v_philo)
 
 	if (philo->index % 2 == 1)
 		usleep(10);
-	if (death_check(philo, philo->data))
-		return (NULL);
-	while (philo->meal_count < philo->data->min_meals)
+	while (philo->meal_count < philo->data->min_meals || \
+								philo->data->min_meals == -1)
 	{
+		printf("%lld\t ms | philosopher %d is thinking\n", \
+					get_time(philo->start_time), philo->index + 1);
+		if (death_check(philo, philo->data))
+			return (NULL);
 		eat(philo, philo->data);
 		if (death_check(philo, philo->data))
 			return (NULL);
@@ -89,7 +100,7 @@ void	*routine(void *v_philo)
 			printf("%lld\t ms | philosopher %d is sleeping\n", \
 					get_time(philo->start_time), philo->index + 1);
 		pthread_mutex_unlock(&philo->data->end_mutex);
-		usleep(philo->data->nomoclock);
+		usleep(philo->data->zzzoclock * 1000);
 	}
 	return (NULL);
 }

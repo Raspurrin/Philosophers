@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 00:06:24 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/20 00:07:09 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/20 21:37:36 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,11 @@ int64_t	start_time(void)
 
 void	ft_sleep(int64_t sleep_time, int64_t start_time)
 {
-	int64_t	old_time;
+	int64_t	sleep_start;
+	int64_t	cur_time;
 
-	old_time = get_time(start_time);
-	while (true)
-	{
-		if (get_time(start_time) - old_time == sleep_time)
-			return ;
-	}
+	sleep_start = get_time(start_time);
+	cur_time = sleep_start;
+	while (cur_time - sleep_start < sleep_time)
+		cur_time = get_time(start_time);
 }
