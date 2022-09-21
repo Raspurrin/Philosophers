@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 00:43:58 by mialbert          #+#    #+#              #
-#    Updated: 2022/09/22 00:35:50 by mialbert         ###   ########.fr        #
+#    Updated: 2022/09/22 01:28:57 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS	=	./srcs/error.c \
 			./srcs/time.c \
 			./srcs/main.c \
 			./srcs/philo_states.c \
-			./srcs/utils.c
+			./srcs/utils.c \
+			./srcs/rand.c
 OBJS	= $(SRCS:.c=.o)
 
 NC		:= \033[0m
@@ -37,8 +38,8 @@ all: philo
 
 banner:
 	@echo "\n${PURPLE}======== Philosophers ========${NC}"
-	@say die die die die die die die
-#	@say Think eat sleep dont die think eat sleep dont die think eat sleep die die die die die die die
+#	@say die die die die die die die
+	@say Think eat sleep dont die think eat sleep dont die think eat sleep die die die die die die die
 
 $(NAME): banner $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(DEBUG)

@@ -6,29 +6,11 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/21 20:44:30 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/22 01:26:58 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
-
-char	*get_rand_food(void)
-{
-	const char	*food[] = {"soup", "potato", "Konstantin", "bugs", "spaghetti", \
-		"broodje frikandel", "boerenkool", "stroopwafel", "gevulde speculaas", \
-		"döner", "you", "currywurst", "zuurkool", "nasi goreng", "curry", \
-		"patatje oorlog", "burritos", "sambal boontjes"};
-
-	return ((char *)food[rand() % 17]);
-}
-
-char	*get_rand_colour(void)
-{
-	const char	*colour[] = {"\033[0;31m", "\033[0;30m", "\033[0;32m", \
-		"\033[0;33m", "\033[0;34m", "\033[0;35m", "\033[0;36m"};
-
-	return ((char *)colour[rand() % 7]);
-}
 
 bool	ft_isdigit(int32_t c)
 {
