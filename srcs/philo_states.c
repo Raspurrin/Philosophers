@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 00:42:06 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/22 00:46:03 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static bool	eat(t_philo *philo, t_data *data)
 		printf("%s%lld\tms | philosopher %d is eating %s\033[0m\n", \
 				get_rand_colour(), cur_time, philo->index + 1, get_rand_food());
 		pthread_mutex_unlock(&data->end_mutex);
-		if (!ft_sleep(philo->data->nomoclock, philo))
+		if (!no_usleep(philo->data->nomoclock, philo))
 			return (unlock(philo, data), pthread_mutex_unlock \
 										(&data->end_mutex), false);
 	}
@@ -115,7 +115,7 @@ void	*routine(void *v_philo)
 			printf("%lld\t  ms | philosopher %d is sleeping\n", \
 					get_time(philo->start_time), philo->index + 1);
 		pthread_mutex_unlock(&philo->data->end_mutex);
-		if (!(ft_sleep(philo->data->zzzoclock, philo)))
+		if (!(no_usleep(philo->data->zzzoclock, philo)))
 			return (NULL);
 		pthread_mutex_lock(&philo->data->end_mutex);
 		if (philo->data->end_state == false && philo->can_eat == true)

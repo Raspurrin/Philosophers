@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 00:06:24 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/21 03:26:37 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/22 00:45:47 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int64_t	get_time(int64_t start_time)
 	return ((time.tv_sec * 1000) + (time.tv_usec / 1000) - start_time);
 }
 
-bool	ft_sleep(int64_t sleep_time, t_philo *philo)
+bool	no_usleep(int64_t sleep_time, t_philo *philo)
 {
 	int64_t	sleep_start;
 	int64_t	cur_time;
