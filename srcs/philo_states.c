@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/21 03:25:31 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/21 03:29:29 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ static void	unlock(t_philo *philo, t_data *data)
 	if (philo->index + 1 == data->philo_nbr)
 		pthread_mutex_unlock(&data->forks[0]);
 	else
-	{
-		if (pthread_mutex_unlock(&data->forks[philo->index + 1]))
-			philo->can_eat = false;
-	}
+		pthread_mutex_unlock(&data->forks[philo->index + 1]);
 }
 
 static void	lock(t_philo *philo, t_data *data)
@@ -35,15 +32,9 @@ static void	lock(t_philo *philo, t_data *data)
 		return ;
 	}
 	if (philo->index + 1 == data->philo_nbr)
-	{
-		if (pthread_mutex_lock(&data->forks[0]))
-			philo->can_eat = false;
-	}
+		pthread_mutex_lock(&data->forks[0]);
 	else
-	{
-		if (pthread_mutex_lock(&data->forks[philo->index + 1]))
-			philo->can_eat = false;
-	}
+		pthread_mutex_lock(&data->forks[philo->index + 1]);
 }
 
 bool	death_check(t_philo *philo, t_data *data)
