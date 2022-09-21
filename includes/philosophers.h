@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/20 15:26:13 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/21 00:40:11 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ bool	error_check(int32_t argc, char **argv);
 void	init_data(t_data *data, int32_t argc, char **argv);
 void	*routine(void *v_philo);
 int64_t	get_time(int64_t start_time);
-void	ft_sleep(int64_t sleep_time, int64_t start_time);
-int64_t	start_time(void);
+bool	ft_sleep(int64_t sleep_time, t_philo *philo);
 bool	ft_isalpha(int32_t c);
 bool	ft_isdigit(int32_t c);
+bool	death_check(t_philo *philo, t_data *data);
 
 #endif

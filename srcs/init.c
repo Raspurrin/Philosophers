@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/20 21:29:59 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/21 00:50:22 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ static void	init_args(t_data *data, int32_t argc, char **argv)
 void	init_data(t_data *data, int32_t argc, char **argv)
 {
 	int32_t	i;
-	int64_t	start_tieme;
+	int64_t	start_time;
 
 	i = 0;
 	init_args(data, argc, argv);
 	data->philo = malloc(data->philo_nbr * sizeof(t_philo));
 	data->forks = malloc (data->philo_nbr * sizeof(pthread_mutex_t));
 	pthread_mutex_init(&data->end_mutex, NULL);
-	start_tieme = start_time();
+	start_time = get_time(0);
 	while (i < data->philo_nbr)
 	{
 		data->philo[i].index = i;
 		data->philo[i].data = data;
-		data->philo[i].start_time = start_tieme;
+		data->philo[i].start_time = start_time;
 		data->philo[i].meal_count = 0;
 		data->philo[i].can_eat = true;
 		pthread_mutex_init(&data->forks[i], NULL);

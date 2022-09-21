@@ -6,11 +6,11 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 00:43:58 by mialbert          #+#    #+#              #
-#    Updated: 2022/09/20 20:00:52 by mialbert         ###   ########.fr        #
+#    Updated: 2022/09/20 21:44:44 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS	= -Wall -Wextra -Werror -pthread -g
+CFLAGS	= -Wall -Wextra -Werror -pthread -g -O3
 CC		= clang
 NAME	= philo
 DEBUG	= -fsanitize=thread
