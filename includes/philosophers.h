@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/21 00:40:11 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/21 20:18:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct philo
 	t_data			*data;
 }	t_philo;
 
+char	*get_rand_food(void);
+char	*get_rand_colour(void);
 int32_t	ft_atoi(const char *str);
 bool	error_check(int32_t argc, char **argv);
 void	init_data(t_data *data, int32_t argc, char **argv);

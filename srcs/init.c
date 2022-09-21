@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/21 00:50:22 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/21 22:56:19 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	init_data(t_data *data, int32_t argc, char **argv)
 		data->philo[i].index = i;
 		data->philo[i].data = data;
 		data->philo[i].start_time = start_time;
+		data->philo[i].meal_time = start_time;
 		data->philo[i].meal_count = 0;
 		data->philo[i].can_eat = true;
 		pthread_mutex_init(&data->forks[i], NULL);

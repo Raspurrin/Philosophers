@@ -1,0 +1,288 @@
+[0;31m1	ms | philosopher 1 is eating spaghetti[0m
+[0;32m2	ms | philosopher 3 is eating gevulde speculaas[0m
+[0;36m3	ms | philosopher 5 is eating Konstantin[0m
+[0;32m4	ms | philosopher 7 is eating gevulde speculaas[0m
+[0;30m5	ms | philosopher 9 is eating spaghetti[0m
+[0;36m6	ms | philosopher 11 is eating broodje frikandel[0m
+[0;31m7	ms | philosopher 13 is eating Konstantin[0m
+[0;31m8	ms | philosopher 15 is eating gevulde speculaas[0m
+[0;32m9	ms | philosopher 17 is eating spaghetti[0m
+[0;34m10	ms | philosopher 19 is eating stroopwafel[0m
+[0;34m11	ms | philosopher 21 is eating spaghetti[0m
+[0;30m12	ms | philosopher 23 is eating Konstantin[0m
+[0;30m13	ms | philosopher 25 is eating bugs[0m
+[0;36m14	ms | philosopher 27 is eating bugs[0m
+[0;31m15	ms | philosopher 29 is eating you[0m
+[0;34m16	ms | philosopher 31 is eating currywurst[0m
+[0;31m17	ms | philosopher 33 is eating stroopwafel[0m
+[0;30m18	ms | philosopher 35 is eating bugs[0m
+[0;31m19	ms | philosopher 37 is eating spaghetti[0m
+[0;31m20	ms | philosopher 39 is eating boerenkool[0m
+[0;36m21	ms | philosopher 41 is eating Konstantin[0m
+[0;31m22	ms | philosopher 43 is eating boerenkool[0m
+[0;32m23	ms | philosopher 45 is eating broodje frikandel[0m
+[0;34m24	ms | philosopher 47 is eating potato[0m
+[0;36m25	ms | philosopher 49 is eating stroopwafel[0m
+[0;32m26	ms | philosopher 51 is eating gevulde speculaas[0m
+[0;31m27	ms | philosopher 53 is eating spaghetti[0m
+[0;31m28	ms | philosopher 55 is eating broodje frikandel[0m
+[0;32m29	ms | philosopher 57 is eating currywurst[0m
+[0;36m30	ms | philosopher 59 is eating nasi goreng[0m
+[0;35m31	ms | philosopher 61 is eating potato[0m
+[0;35m32	ms | philosopher 63 is eating curry[0m
+[0;30m33	ms | philosopher 65 is eating nasi goreng[0m
+[0;31m34	ms | philosopher 67 is eating bugs[0m
+[0;32m35	ms | philosopher 69 is eating nasi goreng[0m
+[0;31m37	ms | philosopher 71 is eating potato[0m
+[0;35m38	ms | philosopher 73 is eating nasi goreng[0m
+[0;31m39	ms | philosopher 75 is eating spaghetti[0m
+[0;31m40	ms | philosopher 77 is eating boerenkool[0m
+[0;36m41	ms | philosopher 79 is eating curry[0m
+[0;36m42	ms | philosopher 81 is eating spaghetti[0m
+[0;31m43	ms | philosopher 83 is eating potato[0m
+[0;30m44	ms | philosopher 85 is eating broodje frikandel[0m
+[0;34m45	ms | philosopher 87 is eating curry[0m
+[0;33m46	ms | philosopher 89 is eating bugs[0m
+[0;34m47	ms | philosopher 91 is eating gevulde speculaas[0m
+[0;34m49	ms | philosopher 93 is eating stroopwafel[0m
+[0;35m50	ms | philosopher 95 is eating currywurst[0m
+[0;36m51	ms | philosopher 97 is eating sauerkraut[0m
+[0;34m53	ms | philosopher 99 is eating döner[0m
+[0;35m54	ms | philosopher 101 is eating sauerkraut[0m
+[0;34m55	ms | philosopher 103 is eating gevulde speculaas[0m
+[0;36m486	ms | philosopher 105 is eating gevulde speculaas[0m
+510	  ms | philosopher 73 is sleeping
+510	  ms | philosopher 33 is sleeping
+[0;34m511	ms | philosopher 106 is eating sauerkraut[0m
+[0;35m513	ms | philosopher 108 is eating döner[0m
+[0;32m514	ms | philosopher 110 is eating currywurst[0m
+[0;33m515	ms | philosopher 112 is eating soup[0m
+[0;33m516	ms | philosopher 114 is eating gevulde speculaas[0m
+[0;32m519	ms | philosopher 116 is eating spaghetti[0m
+[0;32m520	ms | philosopher 118 is eating Konstantin[0m
+[0;36m521	ms | philosopher 120 is eating stroopwafel[0m
+[0;35m522	ms | philosopher 122 is eating nasi goreng[0m
+[0;32m523	ms | philosopher 124 is eating bugs[0m
+[0;36m524	ms | philosopher 126 is eating you[0m
+[0;31m525	ms | philosopher 128 is eating sauerkraut[0m
+[0;35m527	ms | philosopher 130 is eating you[0m
+[0;33m528	ms | philosopher 132 is eating stroopwafel[0m
+[0;30m529	ms | philosopher 134 is eating boerenkool[0m
+[0;30m530	ms | philosopher 136 is eating stroopwafel[0m
+[0;36m532	ms | philosopher 138 is eating currywurst[0m
+[0;36m533	ms | philosopher 140 is eating boerenkool[0m
+[0;30m534	ms | philosopher 142 is eating sauerkraut[0m
+[0;33m536	ms | philosopher 144 is eating broodje frikandel[0m
+[0;34m537	ms | philosopher 146 is eating spaghetti[0m
+[0;35m538	ms | philosopher 148 is eating potato[0m
+[0;30m539	ms | philosopher 150 is eating nasi goreng[0m
+541	  ms | philosopher 79 is sleeping
+[0;33m541	ms | philosopher 152 is eating döner[0m
+[0;33m542	ms | philosopher 154 is eating gevulde speculaas[0m
+[0;30m543	ms | philosopher 156 is eating broodje frikandel[0m
+[0;33m544	ms | philosopher 158 is eating boerenkool[0m
+[0;36m546	ms | philosopher 160 is eating currywurst[0m
+[0;30m547	ms | philosopher 162 is eating broodje frikandel[0m
+[0;31m549	ms | philosopher 164 is eating spaghetti[0m
+[0;30m550	ms | philosopher 166 is eating curry[0m
+[0;30m552	ms | philosopher 168 is eating spaghetti[0m
+[0;36m553	ms | philosopher 170 is eating döner[0m
+[0;34m554	ms | philosopher 172 is eating bugs[0m
+[0;34m556	ms | philosopher 174 is eating you[0m
+[0;36m558	ms | philosopher 176 is eating döner[0m
+[0;35m559	ms | philosopher 178 is eating sauerkraut[0m
+[0;36m561	ms | philosopher 180 is eating stroopwafel[0m
+[0;30m563	ms | philosopher 182 is eating döner[0m
+[0;30m565	ms | philosopher 184 is eating soup[0m
+[0;32m566	ms | philosopher 186 is eating you[0m
+[0;35m567	ms | philosopher 188 is eating you[0m
+[0;30m569	ms | philosopher 190 is eating gevulde speculaas[0m
+[0;32m570	ms | philosopher 191 is eating soup[0m
+[0;30m572	ms | philosopher 193 is eating curry[0m
+573	  ms | philosopher 67 is sleeping
+573	  ms | philosopher 15 is sleeping
+573	  ms | philosopher 77 is sleeping
+573	  ms | philosopher 97 is sleeping
+[0;32m573	ms | philosopher 78 is eating currywurst[0m
+[0;36m573	ms | philosopher 96 is eating sauerkraut[0m
+[0;31m573	ms | philosopher 8 is eating you[0m
+573	  ms | philosopher 7 is sleeping
+573	  ms | philosopher 103 is sleeping
+573	  ms | philosopher 95 is sleeping
+573	  ms | philosopher 9 is sleeping
+573	  ms | philosopher 19 is sleeping
+[0;30m574	ms | philosopher 195 is eating currywurst[0m
+[0;34m576	ms | philosopher 197 is eating soup[0m
+[0;33m579	ms | philosopher 199 is eating gevulde speculaas[0m
+[0;36m605	ms | philosopher 10 is eating stroopwafel[0m
+[0;31m605	ms | philosopher 72 is eating stroopwafel[0m
+[0;33m606	ms | philosopher 102 is eating broodje frikandel[0m
+606	  ms | philosopher 87 is sleeping
+606	  ms | philosopher 11 is sleeping
+606	  ms | philosopher 71 is sleeping
+606	  ms | philosopher 35 is sleeping
+[0;31m606	ms | philosopher 34 is eating boerenkool[0m
+606	  ms | philosopher 63 is sleeping
+606	  ms | philosopher 41 is sleeping
+606	  ms | philosopher 101 is sleeping
+639	  ms | philosopher 25 is sleeping
+[0;36m639	ms | philosopher 14 is eating stroopwafel[0m
+[0;35m640	ms | philosopher 40 is eating soup[0m
+[0;32m640	ms | philosopher 86 is eating gevulde speculaas[0m
+[0;34m640	ms | philosopher 80 is eating boerenkool[0m
+640	  ms | philosopher 27 is sleeping
+[0;34m640	ms | philosopher 26 is eating spaghetti[0m
+640	  ms | philosopher 1 is sleeping
+[0;30m640	ms | philosopher 84 is eating boerenkool[0m
+[0;33m640	ms | philosopher 12 is eating potato[0m
+640	  ms | philosopher 51 is sleeping
+640	  ms | philosopher 81 is sleeping
+[0;32m640	ms | philosopher 82 is eating broodje frikandel[0m
+640	  ms | philosopher 83 is sleeping
+640	  ms | philosopher 13 is sleeping
+640	  ms | philosopher 39 is sleeping
+641	  ms | philosopher 85 is sleeping
+674	  ms | philosopher 21 is sleeping
+674	  ms | philosopher 65 is sleeping
+[0;30m674	ms | philosopher 98 is eating spaghetti[0m
+674	  ms | philosopher 23 is sleeping
+[0;36m675	ms | philosopher 20 is eating döner[0m
+[0;34m675	ms | philosopher 66 is eating soup[0m
+[0;30m675	ms | philosopher 22 is eating curry[0m
+[0;33m675	ms | philosopher 64 is eating you[0m
+[0;32m675	ms | philosopher 100 is eating boerenkool[0m
+[0;32m675	ms | philosopher 24 is eating stroopwafel[0m
+676	  ms | philosopher 45 is sleeping
+676	  ms | philosopher 99 is sleeping
+688	  ms | philosopher 105 is sleeping
+[0;32m688	ms | philosopher 104 is eating nasi goreng[0m
+710	  ms | philosopher 73 is thinking
+710	  ms | philosopher 69 is sleeping
+[0;32m710	ms | philosopher 70 is eating boerenkool[0m
+711	  ms | philosopher 3 is sleeping
+711	  ms | philosopher 106 is sleeping
+[0;30m711	ms | philosopher 2 is eating gevulde speculaas[0m
+711	  ms | philosopher 29 is sleeping
+[0;31m712	ms | philosopher 28 is eating Konstantin[0m
+[0;35m713	ms | philosopher 68 is eating döner[0m
+714	  ms | philosopher 108 is sleeping
+[0;30m714	ms | philosopher 107 is eating currywurst[0m
+[0;31m715	ms | philosopher 109 is eating spaghetti[0m
+715	  ms | philosopher 110 is sleeping
+[0;36m716	ms | philosopher 111 is eating you[0m
+716	  ms | philosopher 112 is sleeping
+719	  ms | philosopher 116 is sleeping
+720	  ms | philosopher 118 is sleeping
+[0;32m721	ms | philosopher 117 is eating soup[0m
+[0;36m721	ms | philosopher 119 is eating nasi goreng[0m
+[0;33m722	ms | philosopher 121 is eating you[0m
+723	  ms | philosopher 120 is sleeping
+723	  ms | philosopher 124 is sleeping
+724	  ms | philosopher 122 is sleeping
+[0;32m724	ms | philosopher 125 is eating soup[0m
+724	  ms | philosopher 126 is sleeping
+[0;34m724	ms | philosopher 123 is eating soup[0m
+725	  ms | philosopher 128 is sleeping
+[0;31m725	ms | philosopher 127 is eating currywurst[0m
+[0;35m728	ms | philosopher 129 is eating sauerkraut[0m
+728	  ms | philosopher 132 is sleeping
+728	  ms | philosopher 130 is sleeping
+[0;30m728	ms | philosopher 131 is eating döner[0m
+[0;31m730	ms | philosopher 133 is eating soup[0m
+[0;34m730	ms | philosopher 135 is eating Konstantin[0m
+731	  ms | philosopher 136 is sleeping
+732	  ms | philosopher 134 is sleeping
+[0;36m733	ms | philosopher 137 is eating sauerkraut[0m
+[0;32m734	ms | philosopher 139 is eating currywurst[0m
+[0;36m734	ms | philosopher 141 is eating soup[0m
+734	  ms | philosopher 142 is sleeping
+734	  ms | philosopher 140 is sleeping
+734	  ms | philosopher 138 is sleeping
+737	  ms | philosopher 146 is sleeping
+738	  ms | philosopher 148 is sleeping
+739	  ms | philosopher 150 is sleeping
+[0;30m740	ms | philosopher 147 is eating curry[0m
+[0;33m741	ms | philosopher 151 is eating spaghetti[0m
+[0;33m741	ms | philosopher 149 is eating nasi goreng[0m
+742	  ms | philosopher 154 is sleeping
+[0;34m742	ms | philosopher 153 is eating sauerkraut[0m
+742	  ms | philosopher 152 is sleeping
+[0;31m743	ms | philosopher 155 is eating Konstantin[0m
+744	  ms | philosopher 156 is sleeping
+746	  ms | philosopher 158 is sleeping
+[0;30m746	ms | philosopher 159 is eating boerenkool[0m
+[0;36m746	ms | philosopher 157 is eating spaghetti[0m
+747	  ms | philosopher 160 is sleeping
+[0;32m747	ms | philosopher 74 is eating currywurst[0m
+748	  ms | philosopher 93 is sleeping
+[0;30m748	ms | philosopher 76 is eating döner[0m
+748	  ms | philosopher 47 is sleeping
+[0;35m748	ms | philosopher 94 is eating soup[0m
+[0;35m749	ms | philosopher 46 is eating gevulde speculaas[0m
+750	  ms | philosopher 75 is sleeping
+[0;30m750	ms | philosopher 165 is eating bugs[0m
+751	  ms | philosopher 166 is sleeping
+751	  ms | philosopher 164 is sleeping
+[0;36m752	ms | philosopher 167 is eating currywurst[0m
+754	  ms | philosopher 172 is sleeping
+[0;32m754	ms | philosopher 169 is eating boerenkool[0m
+[0;30m754	ms | philosopher 171 is eating potato[0m
+755	  ms | philosopher 168 is sleeping
+755	  ms | philosopher 170 is sleeping
+759	  ms | philosopher 178 is sleeping
+760	  ms | philosopher 176 is sleeping
+[0;36m762	ms | philosopher 177 is eating döner[0m
+763	  ms | philosopher 182 is sleeping
+[0;35m763	ms | philosopher 179 is eating sauerkraut[0m
+764	  ms | philosopher 180 is sleeping
+[0;30m764	ms | philosopher 181 is eating currywurst[0m
+[0;32m765	ms | philosopher 183 is eating stroopwafel[0m
+766	  ms | philosopher 184 is sleeping
+769	  ms | philosopher 186 is sleeping
+770	  ms | philosopher 114 is sleeping
+[0;31m770	ms | philosopher 185 is eating Konstantin[0m
+772	  ms | philosopher 191 is sleeping
+[0;31m772	ms | philosopher 113 is eating gevulde speculaas[0m
+[0;34m773	ms | philosopher 115 is eating bugs[0m
+[0;30m773	ms | philosopher 192 is eating spaghetti[0m
+773	  ms | philosopher 15 is thinking
+773	  ms | philosopher 67 is thinking
+773	  ms | philosopher 77 is thinking
+773	  ms | philosopher 7 is thinking
+[0;30m773	ms | philosopher 7 is eating soup[0m
+773	  ms | philosopher 190 is sleeping
+774	  ms | philosopher 8 is sleeping
+774	  ms | philosopher 95 is thinking
+774	  ms | philosopher 19 is thinking
+774	  ms | philosopher 193 is sleeping
+774	  ms | philosopher 103 is thinking
+774	  ms | philosopher 96 is sleeping
+[0;36m774	ms | philosopher 194 is eating broodje frikandel[0m
+775	  ms | philosopher 78 is sleeping
+775	  ms | philosopher 195 is sleeping
+778	  ms | philosopher 197 is sleeping
+[0;30m779	ms | philosopher 196 is eating sauerkraut[0m
+[0;33m780	ms | philosopher 200 is eating you[0m
+[0;33m780	ms | philosopher 198 is eating boerenkool[0m
+781	  ms | philosopher 199 is sleeping
+782	  ms | philosopher 33 is thinking
+[0;35m785	ms | philosopher 42 is eating gevulde speculaas[0m
+[0;35m786	ms | philosopher 44 is eating potato[0m
+786	  ms | philosopher 37 is sleeping
+[0;35m786	ms | philosopher 36 is eating sauerkraut[0m
+[0;34m787	ms | philosopher 38 is eating curry[0m
+787	  ms | philosopher 43 is sleeping
+803	  ms | philosopher 79 is thinking
+805	  ms | philosopher 10 is sleeping
+806	  ms | philosopher 41 is thinking
+806	  ms | philosopher 101 is thinking
+806	  ms | philosopher 35 is thinking
+806	  ms | philosopher 71 is thinking
+806	  ms | philosopher 87 is thinking
+806	  ms | philosopher 63 is thinking
+806	  ms | philosopher 72 is sleeping
+807	  ms | philosopher 102 is sleeping
+809	  ms | philosopher 34 is sleeping
+809	  ms | philosopher 11 is thinking
+[0;30m810	ms | philosopher 33 is eating broodje frikandel[0m
+[1;31m811	ms | philosopher 1 died. Rip. Big sad
