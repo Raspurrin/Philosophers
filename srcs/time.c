@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 00:06:24 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/21 02:53:16 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/21 03:26:37 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ bool	ft_sleep(int64_t sleep_time, t_philo *philo)
 	cur_time = sleep_start;
 	while (cur_time - sleep_start < sleep_time)
 	{
-		// printf("%lld\n", cur_time - sleep_start);
 		if (death_check(philo, philo->data))
 			return (false);
 		usleep(100);
