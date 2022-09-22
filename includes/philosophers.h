@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 00:46:03 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/22 04:02:25 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ bool	no_usleep(int64_t sleep_time, t_philo *philo);
 bool	ft_isalpha(int32_t c);
 bool	ft_isdigit(int32_t c);
 bool	death_check(t_philo *philo, t_data *data);
+void	free_stuff(t_data *data);
 
 #endif

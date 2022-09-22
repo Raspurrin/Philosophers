@@ -6,11 +6,22 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 01:26:58 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/22 04:23:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
+
+void	free_stuff(t_data *data)
+{
+	int32_t	i;
+
+	i = 0;
+	while (i < data->philo_nbr)
+		pthread_mutex_destroy(&data->forks[i++]);
+	// free(&data->philo);
+	// free(&data->forks);
+}
 
 bool	ft_isdigit(int32_t c)
 {
