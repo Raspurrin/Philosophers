@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 04:23:28 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/23 01:26:20 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,17 @@ void	free_stuff(t_data *data)
 	i = 0;
 	while (i < data->philo_nbr)
 		pthread_mutex_destroy(&data->forks[i++]);
-	// free(&data->philo);
-	// free(&data->forks);
+	free(&data->philo[0]);
+	free(&data->forks[0]);
+}
+
+void	print_state(t_data *data, t_philo *philo, char *msg, char *colour)
+{
+	pthread_mutex_lock(&data->end_mutex);
+	if (data->end_state == false && philo->can_eat == true)
+		printf("%s%lld\tms | philosopher %d %s\033[0m\n", colour, \
+			get_time(philo->start_time), philo->index + 1, msg);
+	pthread_mutex_unlock(&data->end_mutex);
 }
 
 bool	ft_isdigit(int32_t c)

@@ -6,12 +6,17 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 01:27:00 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 01:27:16 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/22 17:58:34 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
+/**
+ * A static integer keeps overflowing the seed variable, creating random
+ * numbers! As it's a static, the starting value will be different every time,
+ * creating new random numbers every function call!
+ */
 static uint32_t	ft_rand(void)
 {
 	static uint32_t	seed = 69;

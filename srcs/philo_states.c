@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 00:46:03 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/24 17:14:45 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 static void	unlock(t_philo *philo, t_data *data)
 {
-	if (philo->data->end_state == false)
-		printf("%lld\t  ms | philosopher %d released a fork\n", \
-						get_time(philo->start_time), philo->index + 1);
+	print_state(philo->data, philo, "released a fork", "");
 	pthread_mutex_unlock(&data->forks[philo->index]);
 	if (data->philo_nbr == 1)
 		return ;
@@ -24,19 +22,13 @@ static void	unlock(t_philo *philo, t_data *data)
 		pthread_mutex_unlock(&data->forks[0]);
 	else
 		pthread_mutex_unlock(&data->forks[philo->index + 1]);
-	if (philo->data->end_state == false)
-		printf("%lld\t  ms | philosopher %d released another fork\n", \
-						get_time(philo->start_time), philo->index + 1);
+	print_state(philo->data, philo, "released another fork", "");
 }
 
 static void	lock(t_philo *philo, t_data *data)
 {
 	pthread_mutex_lock(&data->forks[philo->index]);
-	pthread_mutex_lock(&data->end_mutex);
-	if (philo->data->end_state == false)
-		printf("%lld\t  ms | philosopher %d took a fork\n", \
-						get_time(philo->start_time), philo->index + 1);
-	pthread_mutex_unlock(&data->end_mutex);
+	print_state(philo->data, philo, "took a fork", "");
 	if (data->philo_nbr == 1)
 	{
 		philo->can_eat = false;
@@ -46,9 +38,7 @@ static void	lock(t_philo *philo, t_data *data)
 		pthread_mutex_lock(&data->forks[0]);
 	else
 		pthread_mutex_lock(&data->forks[philo->index + 1]);
-	if (philo->data->end_state == false)
-		printf("%lld\t  ms | philosopher %d took another fork\n", \
-						get_time(philo->start_time), philo->index + 1);
+	print_state(philo->data, philo, "took another fork", "");
 }
 
 bool	death_check(t_philo *philo, t_data *data)
@@ -78,14 +68,14 @@ static bool	eat(t_philo *philo, t_data *data)
 		return (false);
 	lock(philo, data);
 	death_check(philo, philo->data);
-	pthread_mutex_lock(&data->end_mutex);
-	if (data->end_state == false && philo->can_eat == true)
+	if (philo->can_eat == true)
 	{
 		philo->meal_count++;
 		cur_time = get_time(philo->start_time);
 		philo->meal_time = cur_time;
-		printf("%s%lld\tms | philosopher %d is eating %s\033[0m\n", \
-				get_rand_colour(), cur_time, philo->index + 1, get_rand_food());
+		// printf("%s%lld\tms | philosopher %d is eating %s\033[0m\n", \
+		// 		get_rand_colour(), cur_time, philo->index + 1, get_rand_food());
+		print_state(data, philo, "is eating", get_rand_colour());
 		pthread_mutex_unlock(&data->end_mutex);
 		if (!no_usleep(philo->data->nomoclock, philo))
 			return (unlock(philo, data), pthread_mutex_unlock \
@@ -94,6 +84,8 @@ static bool	eat(t_philo *philo, t_data *data)
 	else
 		pthread_mutex_unlock(&data->end_mutex);
 	unlock(philo, data);
+	if (death_check(philo, philo->data))
+		return (false);
 	return (true);
 }
 
@@ -108,20 +100,12 @@ void	*routine(void *v_philo)
 	while (philo->meal_count < philo->data->min_meals || \
 								philo->data->min_meals == -1)
 	{
-		if (!eat(philo, philo->data) || death_check(philo, philo->data))
+		if (!eat(philo, philo->data))
 			return (NULL);
-		pthread_mutex_lock(&philo->data->end_mutex);
-		if (philo->data->end_state == false && philo->can_eat == true)
-			printf("%lld\t  ms | philosopher %d is sleeping\n", \
-					get_time(philo->start_time), philo->index + 1);
-		pthread_mutex_unlock(&philo->data->end_mutex);
+		print_state(philo->data, philo, "is sleeping", "");
 		if (!(no_usleep(philo->data->zzzoclock, philo)))
 			return (NULL);
-		pthread_mutex_lock(&philo->data->end_mutex);
-		if (philo->data->end_state == false && philo->can_eat == true)
-			printf("%lld\t  ms | philosopher %d is thinking\n", \
-					get_time(philo->start_time), philo->index + 1);
-		pthread_mutex_unlock(&philo->data->end_mutex);
+		print_state(philo->data, philo, "is thinking", "");
 	}
 	return (NULL);
 }

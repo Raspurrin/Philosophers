@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 04:02:25 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/22 22:48:27 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*get_rand_food(void);
 char	*get_rand_colour(void);
 int32_t	ft_atoi(const char *str);
 bool	error_check(int32_t argc, char **argv);
-void	init_data(t_data *data, int32_t argc, char **argv);
+void	init_philos(t_data *data, int32_t argc, char **argv);
 void	*routine(void *v_philo);
 int64_t	get_time(int64_t start_time);
 bool	no_usleep(int64_t sleep_time, t_philo *philo);
@@ -60,5 +60,6 @@ bool	ft_isalpha(int32_t c);
 bool	ft_isdigit(int32_t c);
 bool	death_check(t_philo *philo, t_data *data);
 void	free_stuff(t_data *data);
+void	print_state(t_data *data, t_philo *philo, char *state, char *colour);
 
 #endif

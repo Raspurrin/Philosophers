@@ -6,17 +6,16 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 00:06:24 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 00:45:47 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/22 18:01:29 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
 /**
- * @brief Get the amount of miliseconds elapsed since the Epoch.
+ * @brief Get the amount of miliseconds elapsed since the start of the sim. 
  * time.tv_sec uses seconds and time.tv_usec uses microseconds,
- * so these units need to be converted as the time stamp uses
- * miliseconds. 
+ * so these units need to be converted as the time stamp uses miliseconds. 
  * Microseconds: one thousands of a second
  * Milliseconds: one millionth of a second
  * @return int64_t 
