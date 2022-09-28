@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/24 17:14:45 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/28 20:59:43 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,14 @@ static bool	eat(t_philo *philo, t_data *data)
 		return (false);
 	lock(philo, data);
 	death_check(philo, philo->data);
-	if (philo->can_eat == true)
+	pthread_mutex_lock(&data->end_mutex);
+	if (data->end_state == false && philo->can_eat == true)
 	{
 		philo->meal_count++;
 		cur_time = get_time(philo->start_time);
 		philo->meal_time = cur_time;
-		// printf("%s%lld\tms | philosopher %d is eating %s\033[0m\n", \
-		// 		get_rand_colour(), cur_time, philo->index + 1, get_rand_food());
-		print_state(data, philo, "is eating", get_rand_colour());
+		printf("%s%lld\tms | philosopher %d is eating %s\033[0m\n", \
+				get_rand_colour(), cur_time, philo->index + 1, get_rand_food());
 		pthread_mutex_unlock(&data->end_mutex);
 		if (!no_usleep(philo->data->nomoclock, philo))
 			return (unlock(philo, data), pthread_mutex_unlock \
@@ -84,8 +84,6 @@ static bool	eat(t_philo *philo, t_data *data)
 	else
 		pthread_mutex_unlock(&data->end_mutex);
 	unlock(philo, data);
-	if (death_check(philo, philo->data))
-		return (false);
 	return (true);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/23 01:26:20 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/09/28 21:01:15 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	free_stuff(t_data *data)
 	i = 0;
 	while (i < data->philo_nbr)
 		pthread_mutex_destroy(&data->forks[i++]);
+	pthread_mutex_destroy(&data->end_mutex);
 	free(&data->philo[0]);
 	free(&data->forks[0]);
 }
