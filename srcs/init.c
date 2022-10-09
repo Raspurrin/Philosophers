@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 21:58:45 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 01:03:34 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@
 static void	init_data(t_data *data, int32_t argc, char **argv)
 {
 	data->end_state = false;
-	data->philo_nbr = ft_atoi(argv[1]);
-	data->ripoclock = ft_atoi(argv[2]);
-	data->nomoclock = ft_atoi(argv[3]);
-	data->zzzoclock = ft_atoi(argv[4]);
+	data->philo_nbr = ft_atoll(argv[1]);
+	data->ripoclock = ft_atoll(argv[2]);
+	data->nomoclock = ft_atoll(argv[3]);
+	data->zzzoclock = ft_atoll(argv[4]);
 	if (argc == 6)
-		data->min_meals = ft_atoi(argv[5]);
+		data->min_meals = ft_atoll(argv[5]);
 	else
 		data->min_meals = -1;
 	data->forks = malloc (data->philo_nbr * sizeof(pthread_mutex_t));
@@ -61,7 +61,7 @@ void	init_philos(t_data *data, int32_t argc, char **argv)
 		data->philo[i].index = i;
 		data->philo[i].data = data;
 		data->philo[i].start_time = start_time;
-		data->philo[i].meal_time = start_time;
+		data->philo[i].meal_time = 0;
 		data->philo[i].meal_count = 0;
 		data->philo[i].can_eat = true;
 // 		if (!pthread_mutex_init(&data->forks[i], NULL) || \

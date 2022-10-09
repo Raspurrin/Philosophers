@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/28 21:01:22 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 01:03:01 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <stdlib.h>
 # include <sys/time.h>
 # include <unistd.h>
+# include <stdint.h>
+# include <limits.h>
 
 typedef struct philo	t_philo;
 
@@ -50,7 +52,7 @@ typedef struct philo
 
 char	*get_rand_food(void);
 char	*get_rand_colour(void);
-int32_t	ft_atoi(const char *str);
+int64_t	ft_atoll(const char *str);
 bool	error_check(int32_t argc, char **argv);
 void	init_philos(t_data *data, int32_t argc, char **argv);
 void	*routine(void *v_philo);

@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/28 21:01:15 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 01:02:34 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ bool	ft_isspace(int32_t c)
 	return (false);
 }
 
-int32_t	ft_atoi(const char *str)
+int64_t	ft_atoll(const char *str)
 {
 	size_t	i;
 	int32_t	sign;
