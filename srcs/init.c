@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 01:03:34 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:50:22 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ static void	init_data(t_data *data, int32_t argc, char **argv)
 {
 	data->end_state = false;
 	data->philo_nbr = ft_atoll(argv[1]);
+	if (data->philo_nbr == 0)
+	{
+		printf("There has to be at least one philosopher\n");
+		exit(0);
+	}
 	data->ripoclock = ft_atoll(argv[2]);
 	data->nomoclock = ft_atoll(argv[3]);
 	data->zzzoclock = ft_atoll(argv[4]);

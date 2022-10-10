@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 01:02:34 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 01:45:59 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int64_t	ft_atoll(const char *str)
 {
 	size_t	i;
 	int32_t	sign;
-	int32_t	out;
+	int64_t	out;
 
 	i = 0;
 	sign = 1;
