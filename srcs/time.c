@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 00:06:24 by mialbert          #+#    #+#             */
-/*   Updated: 2022/09/22 18:01:29 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:44:38 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int64_t	get_time(int64_t start_time)
 	struct timeval	time;
 
 	gettimeofday(&time, NULL);
+	// printf("start_time in get_time: %lld\n", start_time);
+	// printf("time: %lld\n", (time.tv_sec * 1000) + (time.tv_usec / 1000) - start_time);
 	return ((time.tv_sec * 1000) + (time.tv_usec / 1000) - start_time);
 }
 
@@ -39,7 +41,7 @@ bool	no_usleep(int64_t sleep_time, t_philo *philo)
 	{
 		if (death_check(philo, philo->data))
 			return (false);
-		usleep(100);
+		// usleep(100);
 		cur_time = get_time(philo->start_time);
 	}
 	return (true);

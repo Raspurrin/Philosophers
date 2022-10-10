@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 01:45:59 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:56:53 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ void	print_state(t_data *data, t_philo *philo, char *msg, char *colour)
 {
 	pthread_mutex_lock(&data->end_mutex);
 	if (data->end_state == false && philo->can_eat == true)
-		printf("%s%lld\tms | philosopher %d %s\033[0m\n", colour, \
+	{
+		pthread_mutex_unlock(&data->end_mutex);
+	printf("%s%lld\tms | philosopher %d %s\033[0m\n", colour, \
 			get_time(philo->start_time), philo->index + 1, msg);
+	}
 	pthread_mutex_unlock(&data->end_mutex);
 }
 
