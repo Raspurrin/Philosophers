@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 04:45:19 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 07:01:28 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ static void	unlock(t_philo *philo, t_data *data)
 
 static void	lock(t_philo *philo, t_data *data)
 {
-	printf("cur_time: %lld meal_time: %lld\n", get_time(philo->start_time), philo->meal_time);
 	pthread_mutex_lock(&data->forks[philo->index]);
-	death_check(philo, philo->data);
-	printf("cur_time: %lld meal_time: %lld\n", get_time(philo->start_time), philo->meal_time);
 	print_state(philo->data, philo, "took a fork", "");
 	if (data->philo_nbr == 1)
 	{
@@ -67,8 +64,6 @@ static bool	eat(t_philo *philo, t_data *data)
 {
 	int64_t	cur_time;
 
-	if (death_check(philo, philo->data))
-		return (false);
 	lock(philo, data);
 	death_check(philo, philo->data);
 	pthread_mutex_lock(&data->end_mutex);
@@ -94,8 +89,6 @@ void	*routine(void *v_philo)
 {
 	t_philo *const	philo = v_philo;
 
-	if (death_check(philo, philo->data))
-		return (NULL);
 	if (philo->index % 2 == 1)
 		no_usleep(10, philo);
 	while (philo->meal_count < philo->data->min_meals || \

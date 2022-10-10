@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 02:50:22 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 06:20:59 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static void	init_data(t_data *data, int32_t argc, char **argv)
 	data->forks = malloc (data->philo_nbr * sizeof(pthread_mutex_t));
 	data->philo = malloc(data->philo_nbr * sizeof(t_philo));
 	pthread_mutex_init(&data->end_mutex, NULL);
+	pthread_mutex_init(&data->start_mutex, NULL);
+	pthread_mutex_init(&data->meal_mutex, NULL);
 }
 
 /**
@@ -66,7 +68,7 @@ void	init_philos(t_data *data, int32_t argc, char **argv)
 		data->philo[i].index = i;
 		data->philo[i].data = data;
 		data->philo[i].start_time = start_time;
-		data->philo[i].meal_time = 0;
+		data->philo[i].meal_time = start_time;
 		data->philo[i].meal_count = 0;
 		data->philo[i].can_eat = true;
 // 		if (!pthread_mutex_init(&data->forks[i], NULL) || \

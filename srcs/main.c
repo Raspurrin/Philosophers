@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:48:01 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 02:49:23 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 06:22:15 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int32_t	main(int32_t argc, char **argv)
 	if (!(error_check(argc, argv)))
 		return (printf("hello"), 0);
 	init_philos(&data, argc, argv);
+	death_checker(&data);
 	while (i < data.philo_nbr)
 		pthread_join(data.philo[i++].sopher, NULL);
 	if (data.end_state == false)

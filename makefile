@@ -6,21 +6,22 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 00:43:58 by mialbert          #+#    #+#              #
-#    Updated: 2022/09/28 03:05:11 by mialbert         ###   ########.fr        #
+#    Updated: 2022/10/10 06:08:46 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS	= -Wall -Wextra -Werror -pthread -g -O3
 CC		= clang
 NAME	= philo
-#DEBUG	= -fsanitize=thread
+DEBUG	= -fsanitize=address
 SRCS	=	./srcs/error.c \
 			./srcs/init.c \
 			./srcs/time.c \
 			./srcs/main.c \
 			./srcs/philo_states.c \
 			./srcs/utils.c \
-			./srcs/rand.c
+			./srcs/rand.c \
+			./srcs/death_checker.c
 
 OBJS	= $(SRCS:.c=.o)
 
