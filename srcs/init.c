@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/11 22:33:43 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 23:05:11 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,15 @@ static bool	init_data(t_data *data, int32_t argc, char **argv)
 {
 	data->end_state = false;
 	data->philo_nbr = ft_atoll(argv[1]);
-	if (data->philo_nbr == 0)
-	{
-		printf("There has to be at least one philosopher\n");
-		exit(0);
-	}
+	if (data->philo_nbr > 200 || data->philo_nbr <= 0)
+		return (printf("Philosopher amount can only be between 0 and 200\n"), \
+															exit(0), false);
 	data->ripoclock = ft_atoll(argv[2]);
 	data->nomoclock = ft_atoll(argv[3]);
 	data->zzzoclock = ft_atoll(argv[4]);
+	if (data->ripoclock < 60 || data->ripoclock < 60 || data->zzzoclock < 60)
+		return (printf("Give values above or equals to 60 pls\n"), \
+													exit(0), false);
 	if (argc == 6)
 		data->min_meals = ft_atoll(argv[5]);
 	else

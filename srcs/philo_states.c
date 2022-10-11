@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:20:04 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/11 20:51:25 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 22:34:13 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void	*routine(void *v_philo)
 
 	if (philo->index % 2 == 1)
 		no_usleep(10, philo);
-	while (philo->meal_count < philo->data->min_meals || \
-								philo->data->min_meals == -1)
+	while ((philo->meal_count < philo->data->min_meals || \
+								philo->data->min_meals == -1))
 	{
 		if (death_check(philo->data))
 			return (NULL);

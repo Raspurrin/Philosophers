@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   death_checker.c                                    :+:      :+:    :+:   */
+/*   doctor.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 04:53:08 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/11 22:34:01 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 23:10:47 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-static bool	meal_checker(t_data *data)
+static bool	mom(t_data *data)
 {
 	int32_t	i;
 	int32_t	meals_needed;
@@ -34,7 +34,7 @@ static bool	meal_checker(t_data *data)
 	return (false);
 }
 
-void	death_checker(t_data *data)
+void	doctor(t_data *data)
 {
 	int32_t	i;
 
@@ -44,7 +44,7 @@ void	death_checker(t_data *data)
 		while (i < data->philo_nbr)
 		{
 			pthread_mutex_lock(&data->end_mutex);
-			if (meal_checker(data))
+			if (mom(data))
 				return ;
 			if (get_time(data->philo[i].start_time) - \
 		data->philo[i].meal_time >= data->ripoclock && data->end_state == false)

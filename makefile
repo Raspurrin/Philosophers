@@ -6,7 +6,7 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 00:43:58 by mialbert          #+#    #+#              #
-#    Updated: 2022/10/11 21:23:34 by mialbert         ###   ########.fr        #
+#    Updated: 2022/10/11 23:10:14 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS	=	./srcs/error.c \
 			./srcs/philo_states.c \
 			./srcs/utils.c \
 			./srcs/rand.c \
-			./srcs/death_checker.c
+			./srcs/doctor.c
 
 OBJS	= $(SRCS:.c=.o)
 
