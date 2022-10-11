@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 00:06:24 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 20:33:02 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 16:35:14 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int64_t	get_time(int64_t start_time)
 	struct timeval	time;
 
 	gettimeofday(&time, NULL);
-	// printf("start_time in get_time: %lld\n", start_time);
-	// printf("time: %lld\n", (time.tv_sec * 1000) + (time.tv_usec / 1000) - start_time);
 	return ((time.tv_sec * 1000) + (time.tv_usec / 1000) - start_time);
 }
 

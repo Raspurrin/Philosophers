@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:48:01 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 19:01:02 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:41:29 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int32_t	main(int32_t argc, char **argv)
 		pthread_join(data.philo[i++].sopher, NULL);
 	if (data.end_state == false)
 		printf("Everyone has eaten!\n");
-	free_stuff(&data);
+	free_at_exit(&data, data.philo_nbr);
 	return (0);
 }

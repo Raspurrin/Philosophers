@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/11 01:47:12 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:43:05 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,15 +72,14 @@ void	init_philos(t_data *data, int32_t argc, char **argv)
 		data->philo[i].meal_time = 0;
 		data->philo[i].meal_count = 0;
 		data->philo[i].can_eat = true;
-// 		if (!pthread_mutex_init(&data->forks[i], NULL) || \
-// !(pthread_create(&data->philo[i].sopher, NULL, routine, (void *)&data->philo[i])))
+		if (!pthread_mutex_init(&data->forks[i], NULL))
+			free_at_exit(data, i + 1);
+		if (!pthread_create(&data->philo[i].sopher, NULL, routine, \
+											(void *)&data->philo[i]))
+			free_at_exit(data, i + 1);
 		pthread_mutex_init(&data->forks[i], NULL);
 		pthread_create(&data->philo[i].sopher, NULL, routine, \
 												(void *)&data->philo[i]);
-		// {
-		// 	data->philo_nbr = i + 1;
-		// 	return ;
-		// }
 		i++;
 	}
 }

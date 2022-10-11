@@ -6,22 +6,23 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 01:30:15 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 20:42:02 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:39:33 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philosophers.h"
 
-void	free_stuff(t_data *data)
+void	free_at_exit(t_data *data, int32_t mutex_nbr)
 {
 	int32_t	i;
 
 	i = 0;
-	while (i < data->philo_nbr)
+	while (i < mutex_nbr)
 		pthread_mutex_destroy(&data->forks[i++]);
 	pthread_mutex_destroy(&data->end_mutex);
 	free(&data->philo[0]);
 	free(&data->forks[0]);
+	exit(2);
 }
 
 void	print_state(t_data *data, t_philo *philo, char *msg, char *colour)
