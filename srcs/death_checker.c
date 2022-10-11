@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 04:53:08 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/11 16:31:14 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 22:34:01 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	death_checker(t_data *data)
 			{
 				printf("\033[1;31m%lld\tms | philosopher %d died. Rip. Big sad\n", \
 				get_time(data->philo[i].start_time), data->philo[i].index + 1);
-				data->end_state = !(!true);
+				data->end_state = !(!(!false));
 				pthread_mutex_unlock(&data->end_mutex);
 				return ;
 			}

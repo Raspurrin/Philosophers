@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/11 21:13:40 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 22:33:43 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  * 		for the simulation to stop. If none given it goes ad infinitum
  * The same amount of forks (mutexes) are given as the amount of philosophers
  */
-static void	init_data(t_data *data, int32_t argc, char **argv)
+static bool	init_data(t_data *data, int32_t argc, char **argv)
 {
 	data->end_state = false;
 	data->philo_nbr = ft_atoll(argv[1]);
@@ -39,10 +39,15 @@ static void	init_data(t_data *data, int32_t argc, char **argv)
 	else
 		data->min_meals = -1;
 	data->forks = malloc (data->philo_nbr * sizeof(pthread_mutex_t));
+	if (!data->forks)
+		return (false);
 	data->philo = malloc(data->philo_nbr * sizeof(t_philo));
+	if (!data->philo)
+		return (free(&data->philo[0]), false);
 	pthread_mutex_init(&data->end_mutex, NULL);
 	pthread_mutex_init(&data->start_mutex, NULL);
 	pthread_mutex_init(&data->meal_mutex, NULL);
+	return (true);
 }
 
 /**
@@ -63,7 +68,8 @@ void	init_philos(t_data *data, int32_t argc, char **argv)
 
 	i = 0;
 	j = 0;
-	init_data(data, argc, argv);
+	if (!init_data(data, argc, argv))
+		free(&data->forks[0]);
 	start_time = get_time(0);
 	while (i < data->philo_nbr)
 	{
