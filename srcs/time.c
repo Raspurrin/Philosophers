@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 00:06:24 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/10 18:44:38 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:33:02 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ bool	no_usleep(int64_t sleep_time, t_philo *philo)
 	cur_time = sleep_start;
 	while (cur_time - sleep_start < sleep_time)
 	{
-		if (death_check(philo, philo->data))
+		if (death_check(philo->data))
 			return (false);
-		// usleep(100);
+		usleep(100);
 		cur_time = get_time(philo->start_time);
 	}
 	return (true);
