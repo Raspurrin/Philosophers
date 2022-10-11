@@ -6,14 +6,14 @@
 #    By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/10 00:43:58 by mialbert          #+#    #+#              #
-#    Updated: 2022/10/10 06:08:46 by mialbert         ###   ########.fr        #
+#    Updated: 2022/10/11 20:02:40 by mialbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS	= -Wall -Wextra -Werror -pthread -g -O3
 CC		= clang
 NAME	= philo
-DEBUG	= -fsanitize=address
+DEBUG	= -fsanitize=thread
 SRCS	=	./srcs/error.c \
 			./srcs/init.c \
 			./srcs/time.c \

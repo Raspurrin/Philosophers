@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 00:42:58 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/11 19:37:29 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 21:13:08 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ bool	ft_isalpha(int32_t c);
 bool	ft_isdigit(int32_t c);
 bool	death_check(t_data *data);
 void	death_checker(t_data *data);
-void	free_at_exit(t_data *data, int32_t mutex_nbr);
+void	free_at_exit(t_data *data, int32_t mutex_nbr, \
+							int32_t thread_nbr, char *msg);
 void	print_state(t_data *data, t_philo *philo, char *state, char *colour);
 
 #endif

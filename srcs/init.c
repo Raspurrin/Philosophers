@@ -6,7 +6,7 @@
 /*   By: mialbert <mialbert@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 23:19:43 by mialbert          #+#    #+#             */
-/*   Updated: 2022/10/11 19:47:58 by mialbert         ###   ########.fr       */
+/*   Updated: 2022/10/11 21:13:40 by mialbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ static void	init_data(t_data *data, int32_t argc, char **argv)
 void	init_philos(t_data *data, int32_t argc, char **argv)
 {
 	int32_t	i;
+	int32_t	j;
 	int64_t	start_time;
 
 	i = 0;
+	j = 0;
 	init_data(data, argc, argv);
 	start_time = get_time(0);
 	while (i < data->philo_nbr)
@@ -71,14 +73,12 @@ void	init_philos(t_data *data, int32_t argc, char **argv)
 		data->philo[i].meal_time = 0;
 		data->philo[i].meal_count = 0;
 		data->philo[i].can_eat = true;
-		if (pthread_mutex_init(&data->forks[i], NULL) != 0)
-			free_at_exit(data, i + 1);
+		while (j < data->philo_nbr)
+			if (pthread_mutex_init(&data->forks[j++], NULL) != 0)
+				free_at_exit(data, j, 0, "Mutex failed init\n");
 		if (pthread_create(&data->philo[i].sopher, NULL, routine, \
 										(void *)&data->philo[i]) != 0)
-			free_at_exit(data, i + 1);
-		pthread_mutex_init(&data->forks[i], NULL);
-		pthread_create(&data->philo[i].sopher, NULL, routine, \
-												(void *)&data->philo[i]);
+			free_at_exit(data, data->philo_nbr, i + 1, "Thread failed init\n");
 		i++;
 	}
 }
